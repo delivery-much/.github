@@ -3,7 +3,6 @@
     "description": "Send Chat message when a pull request is open",
     "iconName": "chat-pull-request",
     "categories": [
-        "Pull request",
-        "Google Chat"
+        "Notification"
     ]
 }
