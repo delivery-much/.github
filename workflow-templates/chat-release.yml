@@ -1,0 +1,11 @@
+name: chat-release
+on:
+  release:
+    types: [created]
+jobs:
+  chat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: delivery-much/actions-chat@v1
+        with:
+          url: ${{ secrets.GOOGLE_CHAT_RELEASE_WEBHOOK_URL }}
