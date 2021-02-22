@@ -3,7 +3,6 @@
     "description": "Send Chat message when a new release is created",
     "iconName": "chat-release",
     "categories": [
-        "Release",
-        "Google Chat"
+        "Notification"
     ]
 }
