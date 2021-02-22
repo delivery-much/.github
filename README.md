@@ -1,2 +1,3 @@
 # .github
-Workflow templates 
+
+Default community health files
