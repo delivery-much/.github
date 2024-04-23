@@ -9,7 +9,7 @@ Por favor, explique as mudanças feitas/o que há de novo.
 - [ ] Estou atribuído como owner do PR
 - [ ] Review solicitado para time correto
 - [ ] O `.env-example` está atualizado
-
+- [ ] O openapi está atualizado
 
 #### Issue do Jira: <link>
 
