@@ -4,17 +4,27 @@ changelog:
   exclude:
     labels:
       - ignore-for-release
-    authors:
-      - octocat
   categories:
-    - title: Breaking Changes 🛠
+    - title: Major Version 🚀
       labels:
-        - Semver-Major
         - breaking-change
-    - title: Exciting New Features 🎉
+        - feature
+        - improvement
+        - bugfix
+        - migration-guide
+        - configuration
+      template: release-templates/major.md
+    - title: Minor Version 🚀
       labels:
-        - Semver-Minor
-        - enhancement
-    - title: Other Changes
+        - feature
+        - improvement
+        - bugfix
+        - configuration
+      template: release-templates/minor.md
+    - title: Patch Version 🛠️
       labels:
-        - "*"
+        - improvement
+        - bugfix
+        - security-update
+        - configuration
+      template: release-templates/patch.md
