@@ -2,31 +2,31 @@
 
 This is a **minor release**, introducing new features and improvements that are backward compatible.
 
-{% if 'feature' in pr.labels %}
-  ## ✨ New Features
-  - **[feature]** The following new features have been added:
+{% if github.event.pull_requests | selectattr("labels", "contains", "feature") | list %}
+## ✨ New Features
+- **[feature]** The following new features have been added:
   {% for pr in github.event.pull_requests %}
     {{ pr.title }} by {{ pr.user.login }} in [{{ pr.html_url }}]( {{ pr.html_url }} )
   {% endfor %}
 {% endif %}
 
-{% if 'improvement' in pr.labels %}
-  ## 🔧 Improvements
-  - **[improvement]** The following improvements have been made:
+{% if github.event.pull_requests | selectattr("labels", "contains", "improvement") | list %}
+## 🔧 Improvements
+- **[improvement]** The following improvements have been made:
   {% for pr in github.event.pull_requests %}
     {{ pr.title }} by {{ pr.user.login }} in [{{ pr.html_url }}]( {{ pr.html_url }} )
   {% endfor %}
 {% endif %}
 
-{% if 'bugfix' in pr.labels %}
-  ## 🐛 Bug Fixes
-  - **[bugfix]** The following bugs have been fixed:
+{% if github.event.pull_requests | selectattr("labels", "contains", "bugfix") | list %}
+## 🐛 Bug Fixes
+- **[bugfix]** The following bugs have been fixed:
   {% for pr in github.event.pull_requests %}
     {{ pr.title }} by {{ pr.user.login }} in [{{ pr.html_url }}]( {{ pr.html_url }} )
   {% endfor %}
 {% endif %}
 
-{% if 'configuration' in pr.labels %}
+{% if github.event.pull_requests | selectattr("labels", "contains", "configuration") | list %}
 
 --- 
 
@@ -39,7 +39,7 @@ This is a **minor release**, introducing new features and improvements that are 
   - **Feature Toggle**: 
     - FEATURE_X_ENABLED=true
     - FEATURE_Y_ENABLED=false
-{% if 'migration-guide' in pr.labels %}
+{% endif %}
 
 ---
 
