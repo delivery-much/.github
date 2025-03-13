@@ -2,31 +2,31 @@
 
 This is a **patch release**, which includes bug fixes and minor improvements that ensure the stability of the project. There are no new features or breaking changes in this release.
 
-{% if 'bugfix' in pr.labels %}
-  ## 🐛 Bug Fixes
-  - **[bugfix]** The following bugs have been fixed:
+{% if github.event.pull_requests | selectattr("labels", "contains", "bugfix") | list %}
+## 🐛 Bug Fixes
+- **[bugfix]** The following bugs have been fixed:
   {% for pr in github.event.pull_requests %}
     {{ pr.title }} by {{ pr.user.login }} in [{{ pr.html_url }}]( {{ pr.html_url }} )
   {% endfor %}
 {% endif %}
 
-{% if 'improvement' in pr.labels %}
-  ## 🔧 Improvements
-  - **[improvement]** Some minor improvements have been made:
+{% if github.event.pull_requests | selectattr("labels", "contains", "improvement") | list %}
+## 🔧 Improvements
+- **[improvement]** Some minor improvements have been made:
   {% for pr in github.event.pull_requests %}
     {{ pr.title }} by {{ pr.user.login }} in [{{ pr.html_url }}]( {{ pr.html_url }} )
   {% endfor %}
 {% endif %}
 
-{% if 'security-update' in pr.labels %}
-  ## 🧑‍⚖️ Security Updates
-  - **[security-update]** Security vulnerabilities have been addressed:
+{% if github.event.pull_requests | selectattr("labels", "contains", "security-update") | list %}
+## 🔧 Security Updates
+- **[security-update]** Security vulnerabilities have been addressed:
   {% for pr in github.event.pull_requests %}
     {{ pr.title }} by {{ pr.user.login }} in [{{ pr.html_url }}]( {{ pr.html_url }} )
   {% endfor %}
 {% endif %}
 
-{% if 'configuration' in pr.labels %}
+{% if github.event.pull_requests | selectattr("labels", "contains", "configuration") | list %}
 
 --- 
 
@@ -39,7 +39,7 @@ This is a **patch release**, which includes bug fixes and minor improvements tha
   - **Feature Toggle**: 
     - FEATURE_X_ENABLED=true
     - FEATURE_Y_ENABLED=false
-{% if 'migration-guide' in pr.labels %}
+{% endif %}
 
 ---
 
